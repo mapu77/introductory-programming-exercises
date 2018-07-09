@@ -5,6 +5,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class AsteriskShould {
+
+    private static final String VERTICAL_LINE =
+            "*\n" +
+            "*\n" +
+            "*\n";
+    private static final String RIGHT_TRIANGLE =
+            "*\n" +
+            "**\n" +
+            "***\n";
+    private static final String ISOSCELES_TRIANGLE =
+            "   *\n" +
+            "  ***\n" +
+            " *****\n" +
+            "*******\n";
+
     @Test
     public void printAnAsterisk() {
         Asterisk asterisk = new Asterisk();
@@ -23,16 +38,26 @@ public class AsteriskShould {
         Asterisk asterisk = new Asterisk();
         int n = 3;
         assertEquals("Asterisk are not printed in a vertical line",
-                  "*\n" +
-                        "*\n" +
-                        "*\n",
+                VERTICAL_LINE,
                 asterisk.printVerticalLine(n));
     }
 
     @Test
-    public void printRightTriangle() {
+    public void printARightTriangle() {
         Asterisk asterisk = new Asterisk();
         int n = 3;
-        assertEquals("Asterisks not printed in a right triangle", "*\n" + "**\n" + "***\n", asterisk.printRightTriangle(n));
+        assertEquals("Asterisks don't print a right triangle",
+                RIGHT_TRIANGLE,
+                asterisk.printRightTriangle(n));
+    }
+
+    @Test
+    public void printAnIsoscelesTriangle() {
+        Asterisk asterisk = new Asterisk();
+        int n = 4;
+        assertEquals("Asterisks don't print an isosceles triangle",
+                ISOSCELES_TRIANGLE,
+                asterisk.printIsoscelesTriangle(n));
+
     }
 }
