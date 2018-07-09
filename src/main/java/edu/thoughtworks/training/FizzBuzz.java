@@ -2,7 +2,9 @@ package edu.thoughtworks.training;
 
 public class FizzBuzz {
     public String represent(int number) {
-        if (number%3 == 0) return "Fizz";
-        else return "Buzz";
+        String representation = new String();
+        if (number % 3 == 0) representation += "Fizz";
+        if (number % 5 == 0) representation += "Buzz";
+        return representation;
     }
 }

@@ -26,4 +26,12 @@ public class FizzBuzzShould {
         assertThat("FizzBuzz doesn't return FizzBuzz on multiples of 3 and 5",
                 fizzBuzz.represent(15), is("FizzBuzz"));
     }
+
+    @Test
+    public void returnItselfWhenNumberNotDivisibleBy3Or5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat("FizzBuzz doesn't return number when number is not divisible by 3 or 5",
+                fizzBuzz.represent(8), is("8"));
+
+    }
 }
