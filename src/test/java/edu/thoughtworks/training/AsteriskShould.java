@@ -1,5 +1,6 @@
 package edu.thoughtworks.training;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -22,29 +23,42 @@ public class AsteriskShould {
     private static final String FOUR_SPACES = "    ";
     private static final String DIAMOND =
             "   *\n" +
-                    "  ***\n" +
-                    " *****\n" +
-                    "*******\n" +
-                    " *****\n" +
-                    "  ***\n" +
-                    "   *\n";
+            "  ***\n" +
+            " *****\n" +
+            "*******\n" +
+            " *****\n" +
+            "  ***\n" +
+            "   *\n";
+    private static final String INVERTED_ISOSCELES_TRIANGLE =
+            " ***\n" +
+            "  *\n";
+    private static final String DIAMOND_WITH_NAME =
+            "  *\n" +
+            " ***\n" +
+            "Some name\n" +
+            " ***\n" +
+            "  *\n";
+
+    private Asterisk asterisk;
+
+    @Before
+    public void setUp() throws Exception {
+        asterisk = new Asterisk();
+    }
 
     @Test
     public void printAnAsterisk() {
-        Asterisk asterisk = new Asterisk();
         assertEquals("Asterisk is not returning an asterisk", "*", asterisk.printAnAsterisk());
     }
 
     @Test
     public void printANumberOfAsterisk() {
-        Asterisk asterisk = new Asterisk();
         int n = 6;
         assertEquals("Asterisk prints less than two asterisks", "******", asterisk.printHorizontalLine(n));
     }
 
     @Test
     public void printAVerticalLineOfAsterisks() {
-        Asterisk asterisk = new Asterisk();
         int n = 3;
         assertEquals("Asterisk are not printed in a vertical line",
                 VERTICAL_LINE,
@@ -53,7 +67,6 @@ public class AsteriskShould {
 
     @Test
     public void printARightTriangle() {
-        Asterisk asterisk = new Asterisk();
         int n = 3;
         assertEquals("Asterisks don't print a right triangle",
                 RIGHT_TRIANGLE,
@@ -62,17 +75,14 @@ public class AsteriskShould {
 
     @Test
     public void printAnIsoscelesTriangle() {
-        Asterisk asterisk = new Asterisk();
         int n = 4;
         assertEquals("Asterisks don't print an isosceles triangle",
                 ISOSCELES_TRIANGLE,
                 asterisk.printIsoscelesTriangle(n));
-
     }
 
     @Test
     public void printSpaces() {
-        Asterisk asterisk = new Asterisk();
         int n = 4;
         assertEquals("Asterisks don't print a line of spaces",
                 FOUR_SPACES,
@@ -81,10 +91,25 @@ public class AsteriskShould {
 
     @Test
     public void printDiamond() {
-        Asterisk asterisk = new Asterisk();
         int n = 4;
         assertEquals("Asterisks don't print a diamond",
                 DIAMOND,
                 asterisk.printDiamond(n));
+    }
+
+    @Test
+    public void printInvertedIsoscelesTriangle() {
+        int n = 2;
+        assertEquals("Asterisks don't print an inverted isosceles triangle",
+                INVERTED_ISOSCELES_TRIANGLE,
+                asterisk.printInvertedIsoscelesTriangleWithInitialSpaces(n));
+    }
+
+    @Test
+    public void printDiamondWithName() {
+        int n = 3;
+        assertEquals("Asterisks don't print an inverted isosceles triangle",
+                DIAMOND_WITH_NAME,
+                asterisk.printDiamondWithName(n, "Some name"));
     }
 }
