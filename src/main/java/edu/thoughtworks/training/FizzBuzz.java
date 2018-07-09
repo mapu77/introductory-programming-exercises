@@ -1,12 +1,14 @@
 package edu.thoughtworks.training;
 
 public class FizzBuzz {
+    private static final String END_OF_LINE = "\n";
+
     public String represent(int number) {
-        String representation = "";
-        if (isDivisibleBy3(number)) representation += "Fizz";
-        if (isDivisibleBy5(number)) representation += "Buzz";
-        if (!isDivisibleBy3(number) && !isDivisibleBy5(number)) representation = String.valueOf(number);
-        return representation;
+        StringBuilder representation = new StringBuilder();
+        if (isDivisibleBy3(number)) representation.append("Fizz");
+        if (isDivisibleBy5(number)) representation.append("Buzz");
+        if (!isDivisibleBy3(number) && !isDivisibleBy5(number)) representation.append(number);
+        return representation.toString();
     }
 
     private boolean isDivisibleBy5(int number) {
@@ -22,6 +24,9 @@ public class FizzBuzz {
     }
 
     public String fizzBuzz() {
-        return null;
+        StringBuilder fizzBuzz = new StringBuilder();
+        for (int i = 1; i <= 100; ++i) fizzBuzz.append(represent(i)).append(END_OF_LINE);
+        return fizzBuzz.toString();
     }
+
 }

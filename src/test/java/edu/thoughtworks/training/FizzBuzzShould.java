@@ -107,7 +107,7 @@ public class FizzBuzzShould {
             "97\n" +
             "98\n" +
             "Fizz\n" +
-            "Buzz";
+                    "Buzz\n";
 
     @Test
     public void returnFizzWhenNumberIsDivisibleBy3() {
