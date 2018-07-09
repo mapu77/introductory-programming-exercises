@@ -4,17 +4,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class PrimeFactor {
-    public Collection<Integer> generate(int input) {
-        Collection<Integer> primeFactors = new ArrayList<Integer>();
-        for (int i = 2; i <= Math.sqrt(input); ++i) {
-            if (input % i == 0) {
-                primeFactors.add(i);
-                input /= i;
-            }
 
-        }
-        if (input != 1) primeFactors.add(input);
+    private static final int FIRST_PRIME = 2;
 
+    public Collection<Integer> generate(int number) {
+        Collection<Integer> primeFactors = new ArrayList<>();
+        generate(number, FIRST_PRIME,primeFactors);
         return primeFactors;
+    }
+
+    private void generate(final int number, final int possiblePrimeFactor, final Collection<Integer> primeFactors) {
+        if (number != 1) {
+            if (isDivisibleBy(number, possiblePrimeFactor)) {
+                primeFactors.add(possiblePrimeFactor);
+                generate(number/possiblePrimeFactor, possiblePrimeFactor, primeFactors);
+            } else {
+                generate(number, possiblePrimeFactor+1, primeFactors);
+            }
+        }
+    }
+
+    private boolean isDivisibleBy(final int number, final int possiblePrimeFactor) {
+        return number % possiblePrimeFactor == 0;
     }
 }
