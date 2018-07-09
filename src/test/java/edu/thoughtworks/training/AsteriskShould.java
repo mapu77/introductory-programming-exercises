@@ -18,4 +18,14 @@ public class AsteriskShould {
         assertEquals("Asterisk prints less than two asterisks", "******", asterisk.print(n));
     }
 
+    @Test
+    public void printAVerticalLineOfAsterisks() {
+        Asterisk asterisk = new Asterisk();
+        int n = 3;
+        assertEquals("Asterisk are not printed in a vertical line",
+                  "*\n" +
+                        "*\n" +
+                        "*\n",
+                asterisk.printVerticalLine(n));
+    }
 }

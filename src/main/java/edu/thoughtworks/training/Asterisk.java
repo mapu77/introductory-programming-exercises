@@ -13,4 +13,8 @@ public class Asterisk {
         for (int i=0; i<n; ++i) builder.append(print());
         return builder.toString();
     }
+
+    public String printVerticalLine(int n) {
+        return null;
+    }
 }
