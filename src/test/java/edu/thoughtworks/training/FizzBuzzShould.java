@@ -10,13 +10,20 @@ public class FizzBuzzShould {
     public void returnFizzWhenNumberIsDivisibleBy3() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat("FizzBuzz doesn't return Fizz on multiples of 3",
-                fizzBuzz.represent(3), is("Fizz"));
+                fizzBuzz.represent(9), is("Fizz"));
     }
 
     @Test
     public void returnBuzzWhenNumberIsDivisibleBy5() {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat("FizzBuzz doesn't return Buzz on multiples of 5",
-                fizzBuzz.represent(5), is("Buzz"));
+                fizzBuzz.represent(25), is("Buzz"));
+    }
+
+    @Test
+    public void returnFizzBuzzWhenNumberIsBothDivisibleBy3And5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat("FizzBuzz doesn't return FizzBuzz on multiples of 3 and 5",
+                fizzBuzz.represent(15), is("FizzBuzz"));
     }
 }
