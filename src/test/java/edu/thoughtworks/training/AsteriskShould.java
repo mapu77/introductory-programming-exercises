@@ -19,6 +19,15 @@ public class AsteriskShould {
             "  ***\n" +
             " *****\n" +
             "*******\n";
+    private static final String FOUR_SPACES = "    ";
+    private static final String DIAMOND =
+            "   *\n" +
+                    "  ***\n" +
+                    " *****\n" +
+                    "*******\n" +
+                    " *****\n" +
+                    "  ***\n" +
+                    "   *\n";
 
     @Test
     public void printAnAsterisk() {
@@ -59,5 +68,23 @@ public class AsteriskShould {
                 ISOSCELES_TRIANGLE,
                 asterisk.printIsoscelesTriangle(n));
 
+    }
+
+    @Test
+    public void printSpaces() {
+        Asterisk asterisk = new Asterisk();
+        int n = 4;
+        assertEquals("Asterisks don't print a line of spaces",
+                FOUR_SPACES,
+                asterisk.printSpaces(n));
+    }
+
+    @Test
+    public void printDiamond() {
+        Asterisk asterisk = new Asterisk();
+        int n = 4;
+        assertEquals("Asterisks don't print a diamond",
+                DIAMOND,
+                asterisk.printDiamond(n));
     }
 }
