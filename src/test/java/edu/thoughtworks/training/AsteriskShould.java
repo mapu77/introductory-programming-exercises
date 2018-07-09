@@ -38,6 +38,11 @@ public class AsteriskShould {
             "Some name\n" +
             " ***\n" +
             "  *\n";
+    private static final String ISOSCELES_TRIANGLE_WITH_SPACES =
+            "    *\n" +
+                    "   ***\n" +
+                    "  *****\n" +
+                    " *******\n";
 
     private Asterisk asterisk;
 
@@ -108,8 +113,16 @@ public class AsteriskShould {
     @Test
     public void printDiamondWithName() {
         int n = 3;
-        assertEquals("Asterisks don't print an inverted isosceles triangle",
+        assertEquals("Asterisks don't print a diamond with name",
                 DIAMOND_WITH_NAME,
                 asterisk.printDiamondWithName(n, "Some name"));
+    }
+
+    @Test
+    public void printIsoscelesTriangleWithInitialSpaces() {
+        int n = 4;
+        assertEquals("Asterisks don't print an isosceles triangle with spaces",
+                ISOSCELES_TRIANGLE_WITH_SPACES,
+                asterisk.printIsoscelesTriangleWithInitialSpaces(n));
     }
 }
