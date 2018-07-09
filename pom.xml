@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.thoughtworks.training</groupId>
-  <artifactId>triangleexercise</artifactId>
+  <artifactId>introductory-programming-exercises</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>triangleexercise</name>
+  <name>Introductory Programming Exercises</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
