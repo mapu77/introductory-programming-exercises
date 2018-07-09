@@ -28,4 +28,11 @@ public class AsteriskShould {
                         "*\n",
                 asterisk.printVerticalLine(n));
     }
+
+    @Test
+    public void printRightTriangle() {
+        Asterisk asterisk = new Asterisk();
+        int n = 3;
+        assertEquals("Asterisks not printed in a right triangle", "*\n" + "**\n" + "***\n", asterisk.printRightTriangle(n));
+    }
 }

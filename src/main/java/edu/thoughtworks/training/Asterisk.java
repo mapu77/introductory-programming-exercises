@@ -19,4 +19,8 @@ public class Asterisk {
         for (int i = 0; i < n; ++i) builder.append(printAnAsterisk()).append("\n");
         return builder.toString();
     }
+
+    public String printRightTriangle(int n) {
+        return null;
+    }
 }
