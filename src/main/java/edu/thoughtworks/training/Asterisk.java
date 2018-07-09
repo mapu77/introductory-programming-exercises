@@ -4,8 +4,8 @@ package edu.thoughtworks.training;
 public class Asterisk {
 
     private static final String ASTERISK = "*";
-    public static final String END_OF_LINE = "\n";
-    public static final String SPACE = " ";
+    private static final String END_OF_LINE = "\n";
+    private static final String SPACE = " ";
 
     public String printAnAsterisk() {
         return ASTERISK;
